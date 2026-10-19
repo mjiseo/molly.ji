@@ -1,122 +1,77 @@
-/* ==========================================================================
-   1 · Box-modellen: bredden gäller hela lådan (inklusive ram och marginaler)
-   ========================================================================== */
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Pinyon+Script&display=swap');
+
+/* 1 · Box-modellen och mjuk, rofylld scrollning */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* ==========================================================================
-   2 · Varumärket som variabler (färger, avstånd och skuggor)
-   Färgpalett anpassad efter modetemat:
-   - Text & rubriker: Tidlös djup modegrafitsvart för maximal läsbarhet och elegans.
-   - Accenter: Subtil puderrosa från chiffongen som mjuk designaccent på knappar och detaljer.
-   - Typsnitt: Endast Helvetica i normal/ren tjocklek för en exklusiv modeprägel.
-   ========================================================================== */
-:root {
-    /* Text och ytor (Ljust läge) - över 18:1 i kontrast mot vit bakgrund */
-    --text: #111111;
-    /* Djupaste kolsvart/bläck för all text och rubriker */
-    --yta: #ffffff;
-    /* Ren vit minimalistisk studiobakgrund */
-    --yta-2: #faf8f7;
-    /* Subtilt chiffongtonad yta för kort */
-    --kant: #ffffff;
-    /* Mjuk, elegant kantlinje */
-
-    /* Primär- och accentfärger */
-    --primar: #111111;
-    /* Rubriker och huvudlänkar i stilren svart Helvetica */
-    --accent: #ffcade;
-    /* Den mjuka puderrosa chiffongtonen sparad som knappaccent */
-    --knapptext: #111111;
-    /* Mörk text på knappar för över 10:1 kontrast */
-
-    /* Mått och radier */
-    --luft: 1rem;
-    --radie: 4px;
-    /* Skarp och modern magasinform */
-    --skugga: 0 4px 20px -2px rgba(17, 17, 17, 0.05);
-    --skugga-hover: 0 16px 36px -4px rgba(17, 17, 17, 0.12);
-}
-
-/* ==========================================================================
-   3 · Grundstil (typografi, färger och grundelement)
-   Mobil-först: Endast Helvetica i ren, normal tjocklek i stilren mörk text.
-   ========================================================================== */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
+/* 2 · Färgvariabler och typografi: 2000-talets lugna, taktila och varma estetik */
+:root {
+    --text-primary: #23201d;
+    --text-muted: #4a4540;
+    --text-hero: #ffffff;
+    --bg-page: #faf8f5;
+    --bg-card: #f5f1eb;
+    --accent-red: #d94b4b;
+    --script-font: 'Amoresa Aged', 'Amoresa', 'Pinyon Script', 'Alex Brush', cursive;
+    --sans-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --container-width: 68rem;
+    --luft: 1.5rem;
+}
+
+/* 3 · Grundstil */
 body {
     margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0;
+    font-family: var(--sans-font);
     font-weight: 400;
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    color: var(--text);
-    background-color: var(--yta);
+    font-size: 1.18rem;
+    line-height: 1.75;
+    color: var(--text-primary);
+    background: var(--bg-page);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1,
-h2,
-h3 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    /* Ren normalvikt, inte den tjocka versionen */
-    line-height: 1.1;
-    color: var(--primar);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
+/* Skrifttyper */
+.script-heading,
+.script-subheading,
+.hero-link {
+    font-family: var(--script-font);
+    font-weight: normal;
+    color: var(--text-primary);
+    margin: 0;
 }
 
-/* Ren, stor namntitel i normal Helvetica och stilren svart */
-h1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-size: clamp(2.7rem, 9.5vw, 6.1rem);
-    line-height: 0.98;
-    letter-spacing: 0.01em;
-    margin: calc(var(--luft) * 0.5) 0 0 0;
-    color: var(--primar);
-    word-break: break-word;
+.script-heading {
+    font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+    line-height: 1.18;
 }
 
-h2 {
-    font-size: clamp(1.5rem, 4vw, 2.35rem);
-    line-height: 1.15;
-    margin-top: 0;
-    margin-bottom: calc(var(--luft) * 0.75);
-}
-
-h3 {
-    font-size: 1.15rem;
-    letter-spacing: 0.03em;
-    margin-top: 0;
-    margin-bottom: calc(var(--luft) * 0.5);
+.script-subheading {
+    font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+    line-height: 1.25;
+    margin-bottom: 0.9rem;
 }
 
 p {
-    max-width: 65ch;
-    margin-top: 0;
-    margin-bottom: var(--luft);
-    font-weight: 400;
-    color: var(--text);
+    margin: 0 0 1.2rem 0;
+    line-height: 1.78;
+    color: var(--text-muted);
 }
 
 a {
-    color: var(--text);
-    text-underline-offset: 3px;
-    font-weight: 400;
-    transition: opacity 0.2s ease;
-}
-
-a:hover {
-    opacity: 0.65;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.25s ease;
 }
 
 img {
@@ -125,398 +80,340 @@ img {
     display: block;
 }
 
-/* ==========================================================================
-   4 · Sidhuvud och meny
-   Minimalistisk modemeny i ren, normal Helvetica och svart linje.
-   ========================================================================== */
-.sidhuvud {
+/* 4 · HERO SECTION */
+.hero-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.32)),
+        url("img/Never enough water lillies.jpg") center center / cover no-repeat;
     display: flex;
     flex-direction: column;
-    padding: calc(var(--luft) * 1.1) calc(var(--luft) * 1.5);
-    background-color: var(--yta);
-    border-bottom: 1px solid var(--text);
-    gap: calc(var(--luft) * 0.5);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    justify-content: space-between;
+    padding: 2.5rem 2rem 4rem 2rem;
+    position: relative;
+}
+
+.sidhuvud {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.intro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-top {
+    width: 100%;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.hero-titel {
+    color: var(--text-hero);
+    font-family: var(--sans-font);
+    font-size: clamp(2.5rem, 7vw, 5.8rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    margin: 0 0 0.8rem 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .roll {
-    margin: calc(var(--luft) * 0.5) 0 0 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-family: var(--sans-font);
+    font-size: clamp(1.15rem, 2.2vw, 1.35rem);
     font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text);
-    opacity: 0.8;
+    line-height: 1.55;
+    max-width: 52ch;
+    margin: 0;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: calc(var(--luft) * 0.5);
+/* Centrerad stor kursiv meny på Heron */
+.hero-nav {
+    margin: auto 0;
+    padding: 0.5rem 0;
+}
+
+.hero-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
 }
 
-nav a {
+.hero-link {
+    color: #ffffff;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.02em;
     display: inline-block;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 0.875rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    color: var(--text);
-    transition: opacity 0.2s ease;
+    padding: 0.1rem 0.75rem;
 }
 
-nav a:hover {
-    opacity: 0.6;
+.hero-link:hover {
+    color: #fce4ec;
+    transform: translateY(-2px) scale(1.02);
+    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.5), 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
-.sidhuvud nav {
-    margin-top: -0.35rem;
-}
-
-/* ==========================================================================
-   5 · Innehållsytan och introsektionen
-   Molly Ji-chiffongen som stor bild över skärmen bredvid introtexterna.
-   ========================================================================== */
+/* 5 · HUVUDINNEHÅLL (MAIN) */
 main {
-    max-width: 80rem;
+    max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 calc(var(--luft) * 1.25);
+    padding: 3rem 1.5rem 5rem 1.5rem;
 }
 
-section {
-    padding: calc(var(--luft) * 4) 0;
-    border-bottom: 1px solid var(--kant);
+.section-container {
+    padding: 4.5rem 0 3.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-section:last-of-type {
+.section-container:last-of-type {
     border-bottom: none;
 }
 
-/* Introsektionen med Molly Ji på rosa prickig chiffong som stor bild */
-.intro {
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--luft) * 2);
-    padding: calc(var(--luft) * 3) 0;
-}
-
-.intro-text h2 {
-    color: var(--text);
-    max-width: 22ch;
-}
-
-.intro-text p {
-    font-size: 1.15rem;
-    font-weight: 400;
-    margin-bottom: calc(var(--luft) * 1.5);
-    opacity: 0.85;
-}
-
-.intro-bild {
-    width: 100%;
-}
-
-.intro-bild img {
-    width: 100%;
-    max-height: 520px;
-    object-fit: cover;
-    border: 1px solid var(--kant);
-    border-radius: var(--radie);
-    box-shadow: var(--skugga);
-}
-
-/* Om mig-sektionen med personlig fotobåsremsa */
-#om {
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--luft) * 2);
-}
-
-#om img {
-    border-radius: var(--radie);
-    border: 1px solid var(--kant);
-    box-shadow: var(--skugga);
-    width: 100%;
-    max-height: 600px;
-    object-fit: cover;
-}
-
-#om p:first-of-type {
-    font-size: 1.125rem;
-    font-weight: 400;
-}
-
-/* Kontaktsektionen */
-#kontakt {
-    text-align: left;
-}
-
-#kontakt h2 {
-    color: var(--primar);
-}
-
-#kontakt p a {
-    font-weight: 400;
-    font-size: 1.05rem;
-    text-decoration: underline;
-}
-
-/* ==========================================================================
-   6 · Kort i ett rutnät (moodboard- och galleristil)
-   Stora magasinbilder över skärmen och stilrena kortytor i normal Helvetica.
-   ========================================================================== */
-.rutnat {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: calc(var(--luft) * 2);
-    list-style: none;
-    padding: 0;
-    margin: calc(var(--luft) * 2) 0 0 0;
-}
-
-.kort {
-    background-color: var(--yta);
-    padding: calc(var(--luft) * 1.5);
-    border: 1px solid var(--kant);
-    border-radius: var(--radie);
-    box-shadow: var(--skugga);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.kort:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--skugga-hover);
-    border-color: var(--text);
-}
-
-.kort h3 {
-    color: var(--primar);
-    font-weight: 400;
-}
-
-.kort p {
-    margin-bottom: 0;
-    font-size: 0.975rem;
-    font-weight: 400;
-    opacity: 0.85;
-}
-
-/* Projektbilder som spänner över skärmen i äkta magasinsformat */
-#projekt .kort {
-    padding: 0;
-    overflow: hidden;
-    background-color: var(--yta-2);
-}
-
-#projekt .kort img {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    margin: 0;
-    border: none;
-    border-bottom: 1px solid var(--kant);
-}
-
-#projekt .kort h3,
-#projekt .kort p {
-    padding: 0 calc(var(--luft) * 1.5);
-}
-
-#projekt .kort h3 {
-    margin-top: calc(var(--luft) * 1.25);
-}
-
-#projekt .kort p {
-    margin-bottom: calc(var(--luft) * 1.5);
-}
-
-/* ==========================================================================
-   7 · Knappar, länkar och tangentbordsfokus
-   Stilren accentknapp och skarp tangentbordsfokus.
-   ========================================================================== */
-.knapp {
+.main-section-title {
+    margin-bottom: 2.8rem;
     display: inline-block;
-    padding: 0.85rem 1.6rem;
-    background-color: var(--accent);
-    color: var(--knapptext);
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 0.875rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    border-radius: var(--radie);
-    box-shadow: 0 4px 14px rgba(255, 170, 184, 0.35);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
-.knapp:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 170, 200, 0.5);
-    opacity: 0.9;
-    text-decoration: none;
+/* Ikon + Rubrik (About me) */
+.section-header-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2.2rem;
 }
 
-button {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 0.8125rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.65rem 1.2rem;
-    color: var(--text);
-    background-color: var(--yta);
-    border: 1px solid var(--text);
-    border-radius: var(--radie);
-    cursor: pointer;
-    box-shadow: var(--skugga);
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+.lotus-header-icon {
+    width: 62px;
+    height: auto;
+    object-fit: contain;
 }
 
-button:hover {
-    background-color: var(--text);
-    color: var(--yta);
-    transform: translateY(-1px);
+/* Två-kolumns layout */
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
 }
 
-/* Tydlig fokusram när man navigerar med tangentbordet (WCAG-krav) */
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--text);
-    outline-offset: 3px;
-    border-radius: 2px;
+.col-image {
+    display: flex;
+    justify-content: center;
 }
 
-footer {
-    padding: calc(var(--luft) * 4) calc(var(--luft) * 1.5);
+.feature-img {
+    width: 100%;
+    max-width: 440px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    object-fit: cover;
+}
+
+.lotus-feature-img {
+    max-width: 380px;
+}
+
+.social-img {
+    max-width: 330px;
+}
+
+.soul-img {
+    max-width: 430px;
+}
+
+.hotyou-img {
+    max-width: 490px;
+}
+
+.text-box-flow p {
+    font-size: 1.18rem;
+    line-height: 1.78;
+    color: #383431;
+}
+
+/* Block & Fullbreddsbilder utdragna till kanterna */
+.content-block {
+    margin-top: 3.8rem;
+}
+
+.content-block:first-of-type {
+    margin-top: 1.5rem;
+}
+
+.full-width-image-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 1.6rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.grid-display-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+}
+
+.caption-text p {
+    font-size: 1.14rem;
+    line-height: 1.75;
+    color: #4a4540;
+    max-width: 65ch;
+}
+
+/* This website & Ornate Filigree Centerpiece */
+.center-content {
     text-align: center;
-    background-color: var(--yta-2);
-    border-top: 1px solid var(--text);
-    font-size: 0.8125rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 400;
-    opacity: 0.8;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-bottom: 3rem;
 }
 
-footer p {
+.center-text-narrow {
+    max-width: 58ch;
     margin: 0 auto;
 }
 
-/* ==========================================================================
-   8 · Större skärmar (responsiv layout för dator och surfplatta)
-   Delade sektioner och stora bilder över skärmen i normal Helvetica.
-   ========================================================================== */
-@media (min-width: 48rem) {
-    .sidhuvud {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end;
-        flex-wrap: wrap;
-        padding: calc(var(--luft) * 1.25) calc(var(--luft) * 2.5);
+.center-text-narrow p {
+    font-size: 1.18rem;
+    line-height: 1.78;
+    text-align: center;
+}
+
+.ornament-contact-wrapper {
+    position: relative;
+    max-width: 480px;
+    margin: 2.5rem auto 4.5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ornament-graphic-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ornament-img {
+    width: 100%;
+    max-width: 360px;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+
+.contact-card-overlay {
+    margin-top: -8rem;
+    position: relative;
+    z-index: 2;
+    background: rgba(251, 248, 245, 0.94);
+    padding: 2.2rem 2.8rem;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.04);
+    max-width: 420px;
+}
+
+.contact-title {
+    font-size: clamp(2.5rem, 4.2vw, 3.6rem);
+    margin-bottom: 0.5rem;
+}
+
+.contact-tagline {
+    font-size: 1.15rem;
+    color: #4a4540;
+    margin-bottom: 1.2rem;
+}
+
+.contact-email,
+.contact-social {
+    margin: 0.6rem 0;
+}
+
+.contact-link {
+    font-size: 1.15rem;
+    color: #23201d;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    color: #d94b4b;
+}
+
+/* 6 · FOOTER */
+.side-footer {
+    text-align: center;
+    padding: 3.5rem 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 1rem;
+    color: #7d7770;
+    background: #f7f4ee;
+}
+
+/* 7 · RESPONSIVITET FÖR MOBIL OCH TABLET */
+@media (max-width: 768px) {
+    .two-column-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .sidhuvud>div {
-        order: 1;
-        width: auto;
+    .inverted-columns {
+        display: flex;
+        flex-direction: column;
     }
 
-    nav {
-        order: 2;
+    .inverted-columns .col-image {
+        order: -1;
     }
 
-    #tema {
-        order: 3;
+    .hero-wrapper {
+        padding: 2rem 1.2rem 3rem 1.2rem;
     }
 
-    /* Intro: 50/50 editorial split */
-    .intro {
-        flex-direction: row;
-        align-items: center;
-        gap: calc(var(--luft) * 4);
+    .hero-top {
+        text-align: center;
     }
 
-    .intro-text {
-        flex: 1;
+    .roll {
+        margin: 0 auto;
     }
 
-    .intro-bild {
-        flex: 1;
+    .contact-card-overlay {
+        margin-top: -4rem;
+        padding: 1.6rem 1.3rem;
     }
 
-    .intro-bild img {
-        max-height: 580px;
+    body {
+        font-size: 1.12rem;
     }
 
-    /* Om mig: tvåkolumns gallerisplit */
-    #om {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: calc(var(--luft) * 4);
-        align-items: center;
-    }
-
-    #om h2 {
-        grid-column: 1 / -1;
-    }
-
-    /* Projekt visas i 3 kolumner på stora skärmar */
-    #projekt .rutnat {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    #tjanster .rutnat {
-        grid-template-columns: repeat(3, 1fr);
+    .text-box-flow p {
+        font-size: 1.12rem;
     }
 }
 
-/* ==========================================================================
-   9 · Mörkt läge: nya färger när body har klassen morkt
-   Djupt nattgrafit med ren krispig elfenben/vit text i normal Helvetica.
-   ========================================================================== */
-body.morkt {
-    --text: #f7f5f2;
-    /* Krispig, mjuk elfenbensvit text för mörkt läge */
-    --yta: #0e0d0f;
-    /* Djupt nattkolsvart bakgrund */
-    --yta-2: #171619;
-    /* Mörkare yta för kort */
-    --kant: #2c2a2e;
-    /* Subtil mörk kantlinje */
-    --primar: #f7f5f2;
-    /* Rubriker i ren elfenbensvit Helvetica */
-    --accent: #ffcfe0;
-    /* Den mjuka rosa chiffongknappen bevaras */
-    --knapptext: #0e0d0f;
-    --skugga: 0 4px 20px -2px rgba(0, 0, 0, 0.6);
-    --skugga-hover: 0 16px 36px -4px rgba(0, 0, 0, 0.8);
-}
-
-body.morkt .sidhuvud,
-body.morkt footer {
-    border-color: var(--kant);
-}
-
-body.morkt button {
-    border-color: var(--kant);
-    color: var(--text);
-}
-
-body.morkt button:hover {
-    background-color: var(--text);
-    border-color: var(--text);
-    color: #0e0d0f;
-}
-
-body.morkt .knapp {
-    color: #0e0d0f;
-}

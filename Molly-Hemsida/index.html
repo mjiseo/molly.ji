@@ -4,105 +4,197 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Molly Ji Stenberg – Digital marknadsförare i Göteborg</title>
+    <title>MollyJiStenberg - Digital Marketing Specialist</title>
     <meta name="description"
-        content="Molly Ji Stenberg är en kreativt driven, strategiskt tänkande och ideskapande individ.">
+        content="22-year old student at IHM business School majoring in Digital Marketing Specialist.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Pinyon+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-ML5TLF75');</script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body>
-    <header class="sidhuvud">
-        <div>
-            <h1>MollyJiStenberg</h1>
-            <p class="roll">22år gammal student baserad i Göteborg, Sverige.</p>
-        </div>
-        <nav aria-label="Huvudmeny">
-            <ul>
-                <li><a href="#om">About Me</a></li>
-                <li><a href="#tjanster">What Do I Do</a></li>
-                <li><a href="#projekt">Projects</a></li>
-            </ul>
-        </nav>
-        <button id="tema" type="button" hidden>Byt till mörkt läge</button>
-    </header>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ML5TLF75" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- HERO SECTION -->
+    <div class="hero-wrapper">
+        <header class="sidhuvud">
+            <button id="tema" type="button" hidden>Midnight Mode</button>
+        </header>
+
+        <section class="intro">
+            <div class="hero-top">
+                <h1 class="hero-titel">MollyJiStenberg</h1>
+                <p class="roll">22-year old Digital Marketing Specialist student at IHM Business School pursuing a unique,
+                    norm-breaking creative strategic career.</p>
+            </div>
+
+            <!-- Centered large script clickable navigation links as shown in wireframe -->
+            <nav class="hero-nav" aria-label="Huvudmeny">
+                <ul>
+                    <li><a href="#about-me" class="hero-link">About me</a></li>
+                    <li><a href="#what-i-do" class="hero-link">What do I do?</a></li>
+                    <li><a href="#projects" class="hero-link">Projects</a></li>
+                </ul>
+            </nav>
+        </section>
+    </div>
 
     <main>
-        <section class="intro">
-            <div class="intro-text">
-                <h2>Digital marknadsföringsspecialist, concept art, kommunikatör.</h2>
-                <p>Mål om att bli kreativ strateg och att ena människa med konstens olika former och att driva företag.
-                </p>
-                <a class="knapp" href="#kontakt">CV och länkar</a>
+        <!-- ABOUT ME SECTION -->
+        <section id="about-me" class="section-container about-section">
+            <div class="section-header-with-icon">
+                <img src="img/lotus-icon.png" alt="Lotus icon" class="header-icon lotus-header-icon">
+                <h2 class="script-heading">About me</h2>
             </div>
-            <div class="intro-bild">
-                <img src="img/molly-ji-signatur.jpg" alt="Molly Ji personligt varumärke på rosa prickig chiffong"
-                    width="800" height="800">
-            </div>
-        </section>
-
-        <section id="om">
-            <h2>Om mig</h2>
-            <img src="img/profil.jpg" alt="Molly Ji Stenberg i en personlig fotobåsremsa" width="400" height="400">
-            <p>Jag är en student på IHM Business School och studerar digital marknadsföringsspecialist med mål om att en
-                dag arbeta som strateg utrikes med nya kulturer, i nya länder och med nya människor! Tills dess arbetar
-                jag ständigt på att bli så teknisk och kunnig inom områden som SEO och SEM, marknadsföring i den större
-                bilden och att använda det till min nytta.</p>
-            <p>Utanför utbildningen reser jag då tiden finns till och plockar alltid upp på nya saker som stil,
-                marknadsföring och trender jag inte annars stöter på.</p>
-        </section>
-
-        <section id="tjanster">
-            <h2>Vad jag gör</h2>
-            <ul class="rutnat">
-                <li class="kort">
-                    <img src="img/projekt-1.jpg" alt="Moodboards och visuell struktur" width="400" height="400">
-                    <h3>Moodboards</h3>
-                    <p>Jag brinner för att få folk att känna sig enade med konst och älskar att skapa moodboards.</p>
-                </li>
-                <li class="kort">
-                    <img src="img/projekt-2.jpg" alt="Sociala medier och estetisk innehållsplanering" width="400"
-                        height="400">
-                    <h3>Sociala medier</h3>
-                    <p>Erfaren och aktiv på sociala platformar.</p>
-                </li>
-                <li class="kort">
-                    <img src="img/projekt-3.jpg" alt="Concept art och digital vision" width="400" height="400">
-                    <h3>Concept art</h3>
-                    <p>Skapar anslagstavlor på pinterest och letar stiler och märken baserat på dem.
-                    </p>
-                </li>
-            </ul>
-        </section>
-
-        <section id="projekt">
-            <h2>Projekt</h2>
-            <div class="rutnat">
-                <article class="kort">
-                    <h3>Lokal synlighet för ett kafé</h3>
-                    <p>Kursuppgift: plan för Google-profil och sökord för ett fiktivt kafé i Göteborg.</p>
-                </article>
-                <article class="kort">
-                    <h3>Innehållsplan för en månad</h3>
-                    <p>Kursuppgift: pelare, kanaler och tolv inlägg för en hållbar kaffeprenumeration.</p>
-                </article>
-                <article class="kort">
-                    <h3>Den här sajten</h3>
-                    <p>Handkodad med HTML, CSS och JavaScript, med AI som kodstöd.</p>
-                </article>
+            <div class="two-column-layout about-grid">
+                <div class="col-image">
+                    <img src="img/lotus.jpg" alt="Lotus flower in bloom" class="feature-img lotus-feature-img">
+                </div>
+                <div class="col-text text-box-flow">
+                    <p>I have previous competence in programs like Unity, Adobe Photoshop and other platforms to make games.
+                        I've after graduation worked at various places and lived abroad in South Korea to study at Kyunghee
+                        University. I took 10+10 week courses in the Korean Language Program and recieved 2 COCs. Now I'm
+                        pursuing my degree in Digital Marketing and I will become my own niche and grow as a creative
+                        strategist and content creator.</p>
+                </div>
             </div>
         </section>
 
-        <section id="kontakt">
-            <h2>Kontakt</h2>
-            <p>Fortfarande nyfiken om vem jag är? Mejla mig eller hör av dig på LinkedIn.</p>
-            <p><a href="mailto:molste158@ihmeducation.se">molste158@ihmeducation.se</a></p>
-            <p><a href="https://www.linkedin.com/" target="_blank" rel="noopener">Molly Stenberg på LinkedIn</a></p>
+        <!-- WHAT DO I DO? SECTION -->
+        <section id="what-i-do" class="section-container what-i-do-section">
+            <h2 class="script-heading main-section-title">What do I do?</h2>
+
+            <!-- Item 1: Moodboards -->
+            <div class="content-block moodboards-block">
+                <h3 class="script-subheading">Moodboards</h3>
+                <div class="full-width-image-wrapper">
+                    <img src="img/moodboards-grid.png" alt="Moodboards visual collection" class="grid-display-img">
+                </div>
+                <div class="text-box-flow caption-text">
+                    <p>I enjoy creating moodboards and gather ideas for concepts for campaigns and introduce it to
+                        clients and friends.</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Social Media -->
+            <div class="content-block social-media-block">
+                <div class="two-column-layout social-grid">
+                    <div class="col-image">
+                        <img src="img/social-media.jpg" alt="Video editing timeline on smartphone" class="feature-img social-img">
+                    </div>
+                    <div class="col-text">
+                        <h3 class="script-subheading">Social Media</h3>
+                        <div class="text-box-flow">
+                            <p>I enjoy using my Insta360 v-log camera to capture moments in life i find valuable and fun, edit
+                                the clips and post on platforms like TikTok or Instagram. I also collect content for my Instagram
+                                page to further express my unique style.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3: Connecting with my soul -->
+            <div class="content-block soul-block">
+                <div class="two-column-layout soul-grid inverted-columns">
+                    <div class="col-text">
+                        <h3 class="script-subheading">Connecting with my soul</h3>
+                        <div class="text-box-flow">
+                            <p>Apart from practical and technical work I find it fun to find peace with my soul with the help of
+                                tarot decks, intuition and providing guidance for friends who need guidelines for the future
+                                tense about how to take on lifes ups and downs and how to consider thinking through tough times.</p>
+                        </div>
+                    </div>
+                    <div class="col-image">
+                        <img src="img/connecting-soul.jpg" alt="Two round trays with tarot cards, pearls and crystals" class="feature-img soul-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section-container projects-section">
+            <h2 class="script-heading main-section-title">Projects</h2>
+
+            <!-- Item 1: Perfume Personas -->
+            <div class="content-block perfume-block">
+                <h3 class="script-subheading">Perfume Personas</h3>
+                <div class="full-width-image-wrapper">
+                    <img src="img/perfume-grid.png" alt="Perfume Personas board and bottles" class="grid-display-img">
+                </div>
+                <div class="text-box-flow caption-text">
+                    <p>On my pinterest I've gathered a selection of some of my favorite perfumes, sat with my
+                        hyperphantasia and created visual boards for how I experience them. I also link songs that play
+                        in my head that suit the vibe. This is how I thrive creatively and how I help others feel one
+                        with art.</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Not Nice -->
+            <div class="content-block hotyou-block">
+                <div class="two-column-layout hotyou-grid">
+                    <div class="col-text">
+                        <h3 class="script-subheading">Not Nice</h3>
+                        <div class="text-box-flow">
+                            <p>Me and my friend Yalda are planning to launch our soon to be first project called Not Nice. Our
+                                concept is simple; we take stereotypes and norms and break them down into creative campaigns to
+                                support our then upcoming vintage exchange event. This is a yet-to-come event and we are still
+                                in the process of collecting ideas, hiring people and finding places to create. Stay tuned!</p>
+                        </div>
+                    </div>
+                    <div class="col-image">
+                        <img src="img/hot-you-grid.png" alt="Not Nice campaign moodboard and photos" class="feature-img hotyou-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3: This website -->
+            <div class="content-block this-website-block">
+                <div class="center-content">
+                    <h3 class="script-subheading">This website</h3>
+                    <div class="text-box-flow center-text-narrow">
+                        <p>This website is one of my more prized posessions because I've proudly coded this and had the
+                            amazing support from my teacher and feedback from my classmates. My idea with this is to show
+                            how I bloom and what I am capable of while introducing you to who I am inside out.</p>
+                    </div>
+                </div>
+
+                <!-- Ornate Filigree Centerpiece with Contact overlay/section -->
+                <div class="ornament-contact-wrapper">
+                    <div class="ornament-graphic-container">
+                        <img src="img/ornament.jpg" alt="Decorative botanical filigree" class="ornament-img">
+                    </div>
+                    <div id="Contact" class="contact-card-overlay">
+                        <h2 class="script-heading contact-title">Contact</h2>
+                        <p class="contact-tagline">Still curious? Find me on LinkedIn or simply e-mail me, let's connect!.</p>
+                        <p class="contact-email">
+                            <a href="mailto:molste158@ihmeducation.se" class="contact-link">molste158@ihmeducation.se</a>
+                        </p>
+                        <p class="contact-social">
+                            <a href="https://www.linkedin.com/molly-ji-stenberg-2538542a7" target="_blank" rel="noopener" class="contact-link">Molly Stenberg on LinkedIn</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>© 2026 Molly Stenberg · Byggd för hand med HTML, CSS och JavaScript</p>
+    <footer class="side-footer">
+        <p>© 2026 Molly Ji Stenberg · Built by hand with HTML, CSS and JavaScript</p>
     </footer>
 </body>
 
