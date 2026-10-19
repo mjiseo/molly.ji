@@ -78,7 +78,7 @@ h3 {
 h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
-    font-size: clamp(2.55rem, 9vw, 5.8rem);
+    font-size: clamp(2.7rem, 9.5vw, 6.1rem);
     line-height: 0.98;
     letter-spacing: 0.01em;
     margin: calc(var(--luft) * 0.5) 0 0 0;
@@ -132,10 +132,10 @@ img {
 .sidhuvud {
     display: flex;
     flex-direction: column;
-    padding: calc(var(--luft) * 1.5);
+    padding: calc(var(--luft) * 1.1) calc(var(--luft) * 1.5);
     background-color: var(--yta);
     border-bottom: 1px solid var(--text);
-    gap: var(--luft);
+    gap: calc(var(--luft) * 0.5);
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -153,7 +153,7 @@ img {
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: calc(var(--luft) * 0.75);
+    gap: calc(var(--luft) * 0.5);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -176,7 +176,7 @@ nav a:hover {
 }
 
 .sidhuvud nav {
-    margin-top: -1rem;
+    margin-top: -0.35rem;
 }
 
 /* ==========================================================================
@@ -420,22 +420,22 @@ footer p {
     .sidhuvud {
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: flex-end;
         flex-wrap: wrap;
-        padding: calc(var(--luft) * 2) calc(var(--luft) * 2.5);
+        padding: calc(var(--luft) * 1.25) calc(var(--luft) * 2.5);
     }
 
     .sidhuvud>div {
-        order: 2;
-        width: 100%;
+        order: 1;
+        width: auto;
     }
 
     nav {
-        order: 1;
+        order: 2;
     }
 
     #tema {
-        order: 1;
+        order: 3;
     }
 
     /* Intro: 50/50 editorial split */
