@@ -341,10 +341,7 @@ main {
 
 .moodboards-block,
 .perfume-block {
-    display: grid;
-    grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
-    gap: clamp(1rem, 2.5vw, 2.5rem);
-    align-items: stretch;
+    display: block;
 }
 
 .moodboards-block .script-subheading,
@@ -369,12 +366,14 @@ main {
 
 .moodboards-block .full-width-image-wrapper,
 .perfume-block .full-width-image-wrapper {
-    width: 100%;
-    position: static;
-    left: auto;
-    right: auto;
-    margin: 0;
-    align-self: stretch;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 1.6rem;
+    margin-bottom: 0.9rem;
 }
 
 .grid-display-img {
@@ -388,9 +387,9 @@ main {
 .moodboards-block .grid-display-img,
 .perfume-block .grid-display-img {
     width: 100%;
-    height: 100%;
-    min-height: 280px;
-    object-fit: cover;
+    height: auto;
+    min-height: 0;
+    object-fit: initial;
 }
 
 .caption-text p {
@@ -405,8 +404,7 @@ main {
 
 .moodboards-block .caption-text,
 .perfume-block .caption-text {
-    display: flex;
-    align-items: center;
+    display: block;
 }
 
 /* This website & Ornate Filigree Centerpiece */
@@ -512,16 +510,6 @@ main {
         gap: 0;
     }
 
-    .moodboards-block,
-    .perfume-block {
-        grid-template-columns: 1fr;
-    }
-
-    .moodboards-block .script-subheading,
-    .perfume-block .script-subheading {
-        grid-column: 1;
-    }
-
     .about-grid .col-image,
     .about-grid .lotus-feature-img {
         min-height: 0;
@@ -529,12 +517,6 @@ main {
 
     .about-grid .lotus-feature-img {
         aspect-ratio: 1 / 1;
-    }
-
-    .moodboards-block .grid-display-img,
-    .perfume-block .grid-display-img {
-        height: auto;
-        min-height: 0;
     }
 
     .about-grid .col-text {
