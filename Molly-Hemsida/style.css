@@ -108,6 +108,7 @@ img {
     max-width: var(--container-width);
     margin: 0 auto;
     text-align: center;
+    transform: translateY(-0.75rem);
 }
 
 .hero-top {
