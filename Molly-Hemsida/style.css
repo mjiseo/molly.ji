@@ -76,7 +76,9 @@ h3 {
 
 /* Ren, stor namntitel i normal Helvetica och stilren svart */
 h1 {
-    font-size: clamp(2.4rem, 8.5vw, 5.5rem);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: clamp(2.55rem, 9vw, 5.8rem);
     line-height: 0.98;
     letter-spacing: 0.01em;
     margin: calc(var(--luft) * 0.5) 0 0 0;
@@ -151,7 +153,7 @@ img {
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: calc(var(--luft) * 1.25);
+    gap: calc(var(--luft) * 0.75);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -161,7 +163,7 @@ nav a {
     display: inline-block;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 0.875rem;
-    font-weight: 400;
+    font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     text-decoration: none;
@@ -171,6 +173,10 @@ nav a {
 
 nav a:hover {
     opacity: 0.6;
+}
+
+.sidhuvud nav {
+    margin-top: -1rem;
 }
 
 /* ==========================================================================
