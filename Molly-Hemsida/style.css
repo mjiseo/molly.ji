@@ -120,7 +120,7 @@ img {
 .hero-titel {
     color: var(--text-hero);
     font-family: var(--sans-font);
-    font-size: clamp(2.8rem, 8vw, 7.4rem);
+    font-size: clamp(3rem, 9vw, 8.8rem);
     font-weight: 400;
     line-height: 1.05;
     letter-spacing: -0.035em;
@@ -143,7 +143,7 @@ img {
 .hero-nav {
     margin: auto 0;
     padding: 0.5rem 0;
-    transform: translateY(-1.25rem);
+    transform: translateY(-2rem);
 }
 
 .hero-nav ul {
@@ -359,8 +359,16 @@ main {
     object-fit: contain;
 }
 
+.hotyou-grid .feature-img {
+    height: auto;
+    min-height: 0;
+    align-self: center;
+    object-fit: contain;
+}
+
 .social-grid .text-box-flow p,
-.soul-grid .text-box-flow p {
+.soul-grid .text-box-flow p,
+.hotyou-grid .text-box-flow p {
     font-size: clamp(1.15rem, 1.45vw, 1.4rem);
     line-height: 1.5;
 }
@@ -605,7 +613,8 @@ main {
     }
 
     .social-grid .text-box-flow p,
-    .soul-grid .text-box-flow p {
+    .soul-grid .text-box-flow p,
+    .hotyou-grid .text-box-flow p {
         font-size: 1.1rem;
         line-height: 1.5;
     }
@@ -661,6 +670,10 @@ main {
 
     .social-grid .feature-img,
     .soul-grid .feature-img {
+        min-height: 0;
+    }
+
+    .hotyou-grid .feature-img {
         min-height: 0;
     }
 }
