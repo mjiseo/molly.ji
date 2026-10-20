@@ -210,14 +210,6 @@ main {
     position: relative;
 }
 
-.about-section .section-header-with-icon {
-    position: absolute;
-    top: 4.5rem;
-    left: 1.5rem;
-    z-index: 2;
-    margin: 0;
-}
-
 .about-section .script-heading {
     color: #ffffff;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
@@ -263,8 +255,19 @@ main {
 }
 
 .about-grid .col-image {
+    position: relative;
     justify-content: flex-start;
     min-height: 360px;
+}
+
+.about-grid .about-title-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: max-content;
+    margin: 0;
+    transform: translate(-50%, -50%);
 }
 
 .about-grid .lotus-feature-img {
@@ -341,6 +344,25 @@ main {
     height: 100%;
     min-height: 280px;
     object-fit: cover;
+}
+
+.social-grid .col-image,
+.soul-grid .col-image {
+    min-height: 0;
+}
+
+.social-grid .feature-img,
+.soul-grid .feature-img {
+    height: auto;
+    min-height: 0;
+    align-self: center;
+    object-fit: contain;
+}
+
+.social-grid .text-box-flow p,
+.soul-grid .text-box-flow p {
+    font-size: clamp(1.15rem, 1.45vw, 1.4rem);
+    line-height: 1.5;
 }
 
 .social-grid .col-text,
@@ -433,6 +455,20 @@ main {
     font-size: clamp(0.82rem, 1.3vw, 1.2rem);
     line-height: 1.25;
     white-space: nowrap;
+}
+
+.perfume-block .caption-text {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    padding: 0 clamp(1rem, 2vw, 2rem);
+}
+
+.perfume-block .caption-text p {
+    font-size: clamp(1rem, 1.3vw, 1.25rem);
+    line-height: 1.4;
+    white-space: normal;
 }
 
 .moodboards-block .caption-text {
@@ -559,14 +595,19 @@ main {
         padding: 1.75rem 1.2rem;
     }
 
-    .about-section .section-header-with-icon {
-        top: 2rem;
-        left: 1.2rem;
-    }
-
     .moodboards-block .caption-text p {
         font-size: 1rem;
         white-space: normal;
+    }
+
+    .perfume-block .caption-text p {
+        font-size: 1rem;
+    }
+
+    .social-grid .text-box-flow p,
+    .soul-grid .text-box-flow p {
+        font-size: 1.1rem;
+        line-height: 1.5;
     }
 
     .inverted-columns {
@@ -616,6 +657,11 @@ main {
     .soul-grid .feature-img,
     .hotyou-grid .feature-img {
         min-height: 280px;
+    }
+
+    .social-grid .feature-img,
+    .soul-grid .feature-img {
+        min-height: 0;
     }
 }
 
