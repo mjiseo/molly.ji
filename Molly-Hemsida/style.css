@@ -206,6 +206,27 @@ main {
     object-fit: contain;
 }
 
+.about-section {
+    position: relative;
+}
+
+.about-section .section-header-with-icon {
+    position: absolute;
+    top: 4.5rem;
+    left: 1.5rem;
+    z-index: 2;
+    margin: 0;
+}
+
+.about-section .script-heading {
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
+.about-grid .col-text strong {
+    font-weight: 700;
+}
+
 /* Två-kolumns layout */
 .two-column-layout {
     display: grid;
@@ -407,6 +428,21 @@ main {
     display: block;
 }
 
+.moodboards-block .caption-text p {
+    width: 100%;
+    font-size: clamp(0.82rem, 1.3vw, 1.2rem);
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+.moodboards-block .caption-text {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    padding: 0 clamp(1rem, 2vw, 2rem);
+}
+
 /* This website & Ornate Filigree Centerpiece */
 .center-content {
     text-align: center;
@@ -521,6 +557,16 @@ main {
 
     .about-grid .col-text {
         padding: 1.75rem 1.2rem;
+    }
+
+    .about-section .section-header-with-icon {
+        top: 2rem;
+        left: 1.2rem;
+    }
+
+    .moodboards-block .caption-text p {
+        font-size: 1rem;
+        white-space: normal;
     }
 
     .inverted-columns {
