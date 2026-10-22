@@ -27,6 +27,16 @@ html {
     --luft: 1.5rem;
 }
 
+body.morkt {
+    --text-primary: #eee9e2;
+    --text-muted: #c3bbb1;
+    --text-hero: #ffffff;
+    --bg-page: #171614;
+    --bg-card: #24211e;
+    --accent-red: #ff8585;
+    color-scheme: dark;
+}
+
 /* 3 · Grundstil */
 body {
     margin: 0;
@@ -97,6 +107,25 @@ img {
     display: flex;
     justify-content: flex-end;
     width: 100%;
+}
+
+#tema {
+    font: inherit;
+    color: #ffffff;
+    background: rgba(20, 18, 17, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 999px;
+    padding: 0.65rem 1rem;
+    cursor: pointer;
+}
+
+#tema:hover {
+    background: rgba(20, 18, 17, 0.9);
+}
+
+#tema:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
 }
 
 .intro {
@@ -589,6 +618,31 @@ main {
     font-size: 1rem;
     color: #7d7770;
     background: #f7f4ee;
+}
+
+body.morkt .text-box-flow p,
+body.morkt .caption-text p,
+body.morkt .contact-tagline,
+body.morkt .contact-link {
+    color: var(--text-muted);
+}
+
+body.morkt .contact-card-overlay {
+    background: rgba(36, 33, 30, 0.96);
+}
+
+body.morkt .contact-title {
+    color: var(--text-primary);
+}
+
+body.morkt .side-footer {
+    color: var(--text-muted);
+    background: #201e1b;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.morkt .section-container {
+    border-color: rgba(255, 255, 255, 0.12);
 }
 
 /* 7 · RESPONSIVITET FÖR MOBIL OCH TABLET */
